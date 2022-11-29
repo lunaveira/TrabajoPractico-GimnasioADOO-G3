@@ -4,5 +4,5 @@ import com.company.Clients.Notificacion;
 
 public interface IAdapterFirebase {
 
-    public void notificar(Notificacion notificacion);
+    void notificar(Notificacion notificacion);
 }

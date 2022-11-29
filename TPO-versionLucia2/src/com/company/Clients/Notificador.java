@@ -19,8 +19,6 @@ public class Notificador {
 
     public void notificar(Notificacion notificacion) {
         Notificador.adapterFirebase.notificar(notificacion);
-
-
     }
 
 }

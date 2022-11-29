@@ -6,6 +6,8 @@ import com.company.Strategies.IObjetivoStrategy;
 import com.company.Strategies.MantenerFiguraStrategy;
 import com.company.Strategies.TonificarStrategy;
 
+import java.util.ArrayList;
+
 
 public class Main {
 
@@ -33,8 +35,9 @@ public class Main {
 
         objetivo.setSocio(socio);
 
-        Rutina rutina = new Rutina();
-        rutina.crearRutina();
+        ArrayList<Entrenamiento> entrenamientos = null;
+
+        Rutina rutina = new Rutina(4,objetivo,1,entrenamientos,false);
 
         socio.cambiarObjetivo();
 

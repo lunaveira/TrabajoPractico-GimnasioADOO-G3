@@ -6,13 +6,20 @@ public class Entrenamiento {
 
     private ArrayList<Ejercicio> ejercicios;
 
+    private boolean entrenamientoCompleto = false;
+
+    /*
+    public Entrenamiento(NivelExigencia nivel, int nivelAerobicoMinimo, GrupoMuscular grupo) {
+        this.ejercicios = new ArrayList<Ejercicio>();
+        this.ejercicios.add(new Ejercicio(grupo,nivelAerobicoMinimo,nivel));
+        this.ejercicios.add(new Ejercicio(grupo,nivelAerobicoMinimo,nivel));
+        this.ejercicios.add(new Ejercicio(grupo,nivelAerobicoMinimo,nivel));
+    }
+
+     */
 
     public Entrenamiento(ArrayList<Ejercicio> ejercicios) {
         this.ejercicios = ejercicios;
-    }
-
-    public Entrenamiento() {
-
     }
 
     public Entrenamiento nuevo() {
@@ -21,7 +28,7 @@ public class Entrenamiento {
     }
 
     public boolean entrenamientoCumplido(){
-        return true;
+        return this.entrenamientoCompleto = true;
     }
 
     public void mostrarEntrenamiento() {

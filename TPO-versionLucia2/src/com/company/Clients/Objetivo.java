@@ -2,6 +2,8 @@ package com.company.Clients;
 
 import com.company.Strategies.IObjetivoStrategy;
 
+import java.util.ArrayList;
+
 public class Objetivo {
 
     private TipoEstrategia tipoEstrategia;
@@ -10,7 +12,11 @@ public class Objetivo {
 
     private Rutina rutina;
 
-    public Objetivo() {
+    public Objetivo(TipoEstrategia tipoEstrategia, IObjetivoStrategy strategy, Socio socio, Rutina rutina) {
+        this.tipoEstrategia = tipoEstrategia;
+        this.strategy = strategy;
+        this.socio = socio;
+        this.rutina = rutina;
     }
 
     public TipoEstrategia getTipoEstrategia() {

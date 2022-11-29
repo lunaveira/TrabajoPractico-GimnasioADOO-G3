@@ -4,5 +4,5 @@ import com.company.Clients.Medicion;
 
 public interface IAdapterMedicion {
 
-    public Medicion registrarMedicion();
+    Medicion registrarMedicion();
 }

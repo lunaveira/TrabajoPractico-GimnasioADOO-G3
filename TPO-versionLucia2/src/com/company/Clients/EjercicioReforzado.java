@@ -2,39 +2,28 @@ package com.company.Clients;
 
 public class EjercicioReforzado extends Ejercicio {
 
-    private int reps;
-    private int series;
-    private int peso;
+    private int repsReforzadas;
+    private int seriesReforzadas;
+    private int pesoReforzado;
     private Ejercicio ejercicio;
 
-    public EjercicioReforzado(Ejercicio ejercicio, int reps, int series, int peso) {
+    public EjercicioReforzado(Ejercicio ejercicio, Integer repsReforzadas, Integer seriesReforzadas, Integer pesoReforzado) {
         this.ejercicio = ejercicio;
-        this.reps = reps;
-        this.series = series;
-        this.peso = peso;
+        this.nombreEjercicio = ejercicio.getNombreEjercicio();
+        this.repsReforzadas = repsReforzadas;
+        this.seriesReforzadas = seriesReforzadas;
+        this.pesoReforzado = pesoReforzado;
     }
 
-    public int getReps() {
-        return reps;
+    public int getRepsReforzadas() {
+        return ejercicio.getReps() + repsReforzadas;
     }
 
-    public void setReps(int reps) {
-        this.reps = reps;
+    public int getSeriesReforzadas() {
+        return ejercicio.getSeries() + seriesReforzadas;
     }
 
-    public int getSeries() {
-        return series;
-    }
-
-    public void setSeries(int series) {
-        this.series = series;
-    }
-
-    public int getPeso() {
-        return peso;
-    }
-
-    public void setPeso(int peso) {
-        this.peso = peso;
+    public int getPesoReforzadas() {
+        return ejercicio.getPesoAsignado() + pesoReforzado;
     }
 }

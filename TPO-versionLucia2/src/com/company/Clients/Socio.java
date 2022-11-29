@@ -34,7 +34,6 @@ public class Socio {
         AdapterLogin adapterLogin1 = new AdapterLogin();
         this.adapterLogin = adapterLogin1;
         this.tipoEstrategia = tipoEstrategia;
-
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
@@ -189,7 +188,8 @@ public class Socio {
 
 
     public void cambiarObjetivo() {
-        Rutina rutina = new Rutina();
+        ArrayList<Entrenamiento> entrenamientos = null;
+        Rutina rutina = new Rutina(4,this.objetivo,1,entrenamientos,false);
         System.out.println("Nueva rutina creada para el nuevo objetivo: " + this.getTipoEstrategia());
     }
 

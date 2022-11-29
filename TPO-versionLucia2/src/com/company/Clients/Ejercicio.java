@@ -2,13 +2,13 @@ package com.company.Clients;
 
 public class Ejercicio {
 
-    private int series;
-    private int reps;
-    private int pesoAsignado;
-    private int nivelAerobico;
-    private int exigenciaMuscular;
-    private GrupoMuscular grupoMuscular;
-    private String nombreEjercicio;
+    protected int series;
+    protected int reps;
+    protected int pesoAsignado;
+    protected int nivelAerobico;
+    protected int exigenciaMuscular;
+    protected GrupoMuscular grupoMuscular;
+    protected String nombreEjercicio;
 
 
     public Ejercicio(int series, int reps, int pesoAsignado, int nivelAerobico, int exigenciaMuscular, GrupoMuscular grupoMuscular, String nombreEjercicio) {
@@ -31,8 +31,6 @@ public class Ejercicio {
         System.out.println("Cantidad de repeticiones: " + getReps());
         System.out.println("Peso asignado: " + getPesoAsignado());
     }
-
-
 
 
     public int getSeries() {
