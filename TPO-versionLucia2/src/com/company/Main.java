@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.Adapters.AdapterMedicionConcreto;
 import com.company.Clients.*;
 import com.company.Strategies.BajarPesoStrategy;
 import com.company.Strategies.IObjetivoStrategy;
@@ -35,13 +36,21 @@ public class Main {
 
         objetivo.setSocio(socio);
 
-        ArrayList<Entrenamiento> entrenamientos = null;
+     //   ArrayList<Entrenamiento> entrenamientos = null;
 
-        Rutina rutina = new Rutina(4,objetivo,1,entrenamientos,false);
+        Rutina rutina = new Rutina();
+
+        rutina.mostrarCadaRutina();
+
 
         socio.cambiarObjetivo();
 
+
+
+
         socio.obtenerPremio();
+
+
 
 
 

@@ -11,12 +11,12 @@ public class Ejercicio {
     protected String nombreEjercicio;
 
 
-    public Ejercicio(int series, int reps, int pesoAsignado, int nivelAerobico, int exigenciaMuscular, GrupoMuscular grupoMuscular, String nombreEjercicio) {
-        this.series = series;
-        this.reps = reps;
-        this.pesoAsignado = pesoAsignado;
-        this.nivelAerobico = nivelAerobico;
-        this.exigenciaMuscular = exigenciaMuscular;
+    public Ejercicio( GrupoMuscular grupoMuscular, String nombreEjercicio) {
+        this.series = 3;
+        this.reps =  12;
+        this.pesoAsignado = 10;
+        this.nivelAerobico = 5;
+        this.exigenciaMuscular = 10;
         this.grupoMuscular = grupoMuscular;
         this.nombreEjercicio = nombreEjercicio;
     }

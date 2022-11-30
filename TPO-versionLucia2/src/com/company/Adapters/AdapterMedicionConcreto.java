@@ -5,8 +5,6 @@ import com.company.Clients.Medicion;
 public class AdapterMedicionConcreto implements IAdapterMedicion{
     @Override
     public Medicion registrarMedicion() {
-        Medicion medicion = new Medicion("27/11/2022", 53.4,10.1,5.2);
-        //java.time.LocalDate.now()
-        return medicion;
+        return new Medicion("30/11/22", 77.7, 99.99, 99.99);
     }
 }

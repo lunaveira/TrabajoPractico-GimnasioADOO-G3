@@ -1,5 +1,7 @@
 package com.company.Controllers;
 
+import com.company.Clients.Entrenamiento;
+import com.company.Clients.Objetivo;
 import com.company.Clients.Rutina;
 
 public class RutinaController {

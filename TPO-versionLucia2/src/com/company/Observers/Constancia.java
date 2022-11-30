@@ -4,10 +4,15 @@ import com.company.Adapters.AdapterFirebase;
 import com.company.Clients.Notificacion;
 import com.company.Clients.Notificador;
 import com.company.Clients.Rutina;
+import com.company.Clients.Socio;
 
 public class Constancia extends TrofeoObservador {
 
     private Rutina rutina;
+
+    private Socio socio;
+
+
 
     private Notificador notificador;
 
@@ -23,6 +28,8 @@ public class Constancia extends TrofeoObservador {
             Notificacion notificacion = new Notificacion("Ganaste un trofeo a la constancia");
             notificador.setAdapterFirebase(new AdapterFirebase());
             notificador.notificar(notificacion);
+
+            this.socio.agregarTrofeo(this);
 
 
         }

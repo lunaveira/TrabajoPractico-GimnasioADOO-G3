@@ -12,11 +12,14 @@ public class Objetivo {
 
     private Rutina rutina;
 
-    public Objetivo(TipoEstrategia tipoEstrategia, IObjetivoStrategy strategy, Socio socio, Rutina rutina) {
+   /* public Objetivo(TipoEstrategia tipoEstrategia, IObjetivoStrategy strategy, Socio socio, Rutina rutina) {
         this.tipoEstrategia = tipoEstrategia;
         this.strategy = strategy;
         this.socio = socio;
         this.rutina = rutina;
+    }  */
+
+    public Objetivo() {
     }
 
     public TipoEstrategia getTipoEstrategia() {
@@ -54,5 +57,11 @@ public class Objetivo {
 
     public boolean objCumplido() {
         return strategy.objCumplido(socio);
+    }
+
+
+    public void verRutina() {
+        this.rutina.mostrarCadaRutina();
+
     }
 }

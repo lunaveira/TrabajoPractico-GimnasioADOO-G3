@@ -11,6 +11,8 @@ public class Creido extends TrofeoObservador{
     private Notificador notificador;
 
 
+
+
     @Override
     public void chequearPremio() {
 
@@ -18,6 +20,7 @@ public class Creido extends TrofeoObservador{
             Notificacion notificacion = new Notificacion("Ganaste el premio al creido");
             notificador.setAdapterFirebase(new AdapterFirebase());
             notificador.notificar(notificacion);
+            this.socio.agregarTrofeo(this);
         }
 
     }

@@ -10,5 +10,19 @@ public abstract class TrofeoObservador {
 
     public abstract void chequearPremio();
 
+    public Notificador getNotificador() {
+        return notificador;
+    }
 
+    public void setNotificador(Notificador notificador) {
+        this.notificador = notificador;
+    }
+
+    public TipoTrofeo getTipoTrofeo() {
+        return tipoTrofeo;
+    }
+
+    public void setTipoTrofeo(TipoTrofeo tipoTrofeo) {
+        this.tipoTrofeo = tipoTrofeo;
+    }
 }

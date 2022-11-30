@@ -41,6 +41,24 @@ public class Socio {
         this.pesoActual = pesoActual;
         this.grasaActual = grasaActual;
         this.masaActual = masaActual;
+
+        this.trofeos = new ArrayList<TrofeoObservador>();
+         Creido creido = new Creido();
+         creido.setTipoTrofeo(TipoTrofeo.CREIDO);
+         this.trofeos.add(creido);
+
+
+          Dedicacion dedicacion = new Dedicacion();
+          dedicacion.setTipoTrofeo(TipoTrofeo.DEDICACION);
+          this.trofeos.add(dedicacion);
+
+          Constancia constancia = new Constancia(rutina);
+          constancia.setTipoTrofeo(TipoTrofeo.CONSTANCIA);
+          this.trofeos.add(constancia);
+
+
+
+
     }
 
    public void mostrarSocio(Socio socio) {
@@ -188,19 +206,31 @@ public class Socio {
 
 
     public void cambiarObjetivo() {
-        ArrayList<Entrenamiento> entrenamientos = null;
-        Rutina rutina = new Rutina(4,this.objetivo,1,entrenamientos,false);
+     //   ArrayList<Entrenamiento> entrenamientos = null;
+     //   Rutina rutina = new Rutina(4,this.objetivo,1,entrenamientos,false);
         System.out.println("Nueva rutina creada para el nuevo objetivo: " + this.getTipoEstrategia());
     }
 
    public void registrarMedicion(Medicion medicion) {
+        this.mediciones = new ArrayList<Medicion>();
         mediciones.add(medicion);
        pesoActual = medicion.getPeso();
        for (TrofeoObservador trofeo : trofeos) {
+         //   trofeo.chequearPremio();
 
        }
 
    }
+
+    public void verTrofeos() {
+        System.out.println("=======TROFEOS========");
+        for (TrofeoObservador trofeo : this.trofeos) {
+            System.out.println(trofeo.getTipoTrofeo());
+        }
+
+    }
+
+
 
     public void obtenerPremio() {
         if (trofeos != null ) {
