@@ -19,6 +19,7 @@ public class MantenerFiguraStrategy implements IObjetivoStrategy{
     @Override
     public boolean objCumplido(Socio socio) {
         if(socio.getPesoActual() < (socio.getPesoActual() + valorConfigurable) && socio.getPesoActual() > (socio.getPesoActual() + valorConfigurable)) {
+            System.out.println("El objetivo de mantener la figura fue cumplido");
             return true;
         }
 

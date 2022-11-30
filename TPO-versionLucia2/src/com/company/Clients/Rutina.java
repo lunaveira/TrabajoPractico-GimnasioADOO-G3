@@ -47,15 +47,20 @@ public class Rutina {
     }
 
     public void mostrarCadaRutina() {
-        for (Entrenamiento ent : this.entrenamientos) {
-            ent.mostrarEntrenamiento();
+        for (Entrenamiento entrenamiento : this.entrenamientos) {
+            entrenamiento.mostrarEntrenamiento();
         }
 
     }
-    public void reforzarRutina(Integer repsReforzadas, Integer seriesReforzadas, Integer pesoReforzado) {
-        for (Entrenamiento ent : this.entrenamientos) {
-            ent.reforzarEntrenamiento(repsReforzadas, seriesReforzadas, pesoReforzado);
+
+    public void reforzarRutina(int repsReforzadas, int seriesReforzadas, int pesoReforzado) {
+        for (Entrenamiento entrenamiento : entrenamientos) {
+            entrenamiento.reforzarEntrenamiento(repsReforzadas, seriesReforzadas, pesoReforzado);
+            entrenamiento.mostrarEntrenamiento();
         }
     }
+
+
+
 
 }

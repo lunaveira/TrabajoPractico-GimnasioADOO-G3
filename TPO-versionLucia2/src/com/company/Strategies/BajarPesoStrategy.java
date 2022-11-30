@@ -18,6 +18,8 @@ public class BajarPesoStrategy implements IObjetivoStrategy{
 
     @Override
     public boolean objCumplido(Socio socio) {
+        System.out.println("El objetivo de bajar peso fue cumplido");
         return socio.getPesoActual() == pesoObjetivo;
+
     }
 }

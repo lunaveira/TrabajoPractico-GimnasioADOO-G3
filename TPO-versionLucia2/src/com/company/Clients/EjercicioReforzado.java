@@ -7,23 +7,25 @@ public class EjercicioReforzado extends Ejercicio {
     private int pesoReforzado;
     private Ejercicio ejercicio;
 
-    public EjercicioReforzado(Ejercicio ejercicio, Integer repsReforzadas, Integer seriesReforzadas, Integer pesoReforzado) {
+    public EjercicioReforzado(Ejercicio ejercicio, int repsReforzadas, int seriesReforzadas, int pesoReforzado) {
         this.ejercicio = ejercicio;
-        this.nombreEjercicio = ejercicio.getNombreEjercicio();
+        this.setNombreEjercicio(ejercicio.getNombreEjercicio());
         this.repsReforzadas = repsReforzadas;
         this.seriesReforzadas = seriesReforzadas;
         this.pesoReforzado = pesoReforzado;
     }
 
+
+
     public int getRepsReforzadas() {
-        return ejercicio.getReps() + repsReforzadas;
+        return ejercicio.getReps() * repsReforzadas;
     }
 
     public int getSeriesReforzadas() {
-        return ejercicio.getSeries() + seriesReforzadas;
+        return ejercicio.getSeries() * seriesReforzadas;
     }
 
     public int getPesoReforzadas() {
-        return ejercicio.getPesoAsignado() + pesoReforzado;
+        return ejercicio.getPesoAsignado() * pesoReforzado;
     }
 }

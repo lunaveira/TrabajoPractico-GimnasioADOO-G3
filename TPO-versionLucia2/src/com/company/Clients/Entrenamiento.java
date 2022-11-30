@@ -47,4 +47,6 @@ public class Entrenamiento {
         this.ejercicios = lista;
     }
 
+
+
 }

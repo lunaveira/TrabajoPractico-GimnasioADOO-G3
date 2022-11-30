@@ -20,7 +20,8 @@ public class TonificarStrategy implements IObjetivoStrategy{
 
     @Override
     public boolean objCumplido(Socio socio) {
-        if (socio.getGrasaActual() <= grasaIdeal || socio.getMasaActual() >= masaIdeal) {
+        if (socio.getGrasaActual() <= grasaIdeal && socio.getMasaActual() >= masaIdeal) {
+            System.out.println("El objetivo de tonificar fue cumplido");
             return true;
         }
 

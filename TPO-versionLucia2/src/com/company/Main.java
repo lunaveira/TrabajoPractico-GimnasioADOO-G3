@@ -2,6 +2,10 @@ package com.company;
 
 import com.company.Adapters.AdapterMedicionConcreto;
 import com.company.Clients.*;
+import com.company.Observers.Constancia;
+import com.company.Observers.Creido;
+import com.company.Observers.Dedicacion;
+import com.company.Observers.TrofeoObservador;
 import com.company.Strategies.BajarPesoStrategy;
 import com.company.Strategies.IObjetivoStrategy;
 import com.company.Strategies.MantenerFiguraStrategy;
@@ -15,7 +19,9 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Socio socio = new Socio(TipoEstrategia.BAJAR, "Lucia", "Naveira", 20, TipoSexo.FEMENINO, 53.4,20.1, 50.4);
+        Socio socio = new Socio(TipoEstrategia.BAJAR, "Lucia", "Naveira", 20, TipoSexo.FEMENINO, 53.4,20.1, 72.4);
+
+        System.out.println("-----------SOCIO------------");
 
         socio.mostrarSocio(socio);
         socio.ingresar("lunaveira", "lucia123");
@@ -38,12 +44,66 @@ public class Main {
 
      //   ArrayList<Entrenamiento> entrenamientos = null;
 
+
+
+        System.out.println(" ");
+
+        System.out.println("-----------RUTINAS------------");
+
         Rutina rutina = new Rutina();
 
         rutina.mostrarCadaRutina();
 
+        System.out.println(" ");
+
+        System.out.println("------------RUTINA REFORZADA------------");
+
+
+        rutina.reforzarRutina(2,2, 2);
+
+        System.out.println(" ");
+
+
+
+
+
+
+        System.out.println("-----------NUEVO OBJETIVO------------");
+
 
         socio.cambiarObjetivo();
+
+
+
+        objetivo.objCumplido();
+
+        System.out.println(" ");
+
+
+
+
+        System.out.println("-----------TROFEOS------------");
+
+
+        //Trofeo del creido
+        socio.registrarMedicion(new AdapterMedicionConcreto().registrarMedicion());
+        socio.registrarMedicion(new AdapterMedicionConcreto().registrarMedicion());
+        socio.registrarMedicion(new AdapterMedicionConcreto().registrarMedicion());
+
+
+        //Trofeo a la constancia
+        objetivo.setStrategy(bajar);
+
+        TrofeoObservador trofeo = new Constancia(rutina);
+        rutina.rutinaCumplida();
+
+
+
+        //Trofeo de la dedicacion
+        objetivo.setStrategy(mantener);
+        objetivo.objCumplido();
+
+        socio.verTrofeos();
 
 
 

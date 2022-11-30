@@ -1,14 +1,18 @@
 package com.company.Clients;
 
+import java.util.ArrayList;
+
 public class Ejercicio {
 
-    protected int series;
-    protected int reps;
-    protected int pesoAsignado;
-    protected int nivelAerobico;
-    protected int exigenciaMuscular;
-    protected GrupoMuscular grupoMuscular;
-    protected String nombreEjercicio;
+    private int series;
+    private int reps;
+    private int pesoAsignado;
+    private int nivelAerobico;
+    private int exigenciaMuscular;
+    private GrupoMuscular grupoMuscular;
+    private String nombreEjercicio;
+
+
 
 
     public Ejercicio( GrupoMuscular grupoMuscular, String nombreEjercicio) {
@@ -88,4 +92,6 @@ public class Ejercicio {
     public void setNombreEjercicio(String nombreEjercicio) {
         this.nombreEjercicio = nombreEjercicio;
     }
+
+
 }
