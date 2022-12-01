@@ -17,8 +17,8 @@ public class Rutina {
        this.entrenamientos = new ArrayList<Entrenamiento>();
        this.entrenamientos.add(new Entrenamiento(GrupoMuscular.BRAZOS, "Vuelos laterales"));
        this.entrenamientos.add(new Entrenamiento(GrupoMuscular.ESPALDA, "Remo con barra"));
-        this.entrenamientos.add(new Entrenamiento(GrupoMuscular.PECHO, "Press banco plano"));
-        this.entrenamientos.add(new Entrenamiento(GrupoMuscular.PIERNAS, "Sentadillas"));
+       this.entrenamientos.add(new Entrenamiento(GrupoMuscular.PECHO, "Press banco plano"));
+       this.entrenamientos.add(new Entrenamiento(GrupoMuscular.PIERNAS, "Sentadillas"));
     }
 
 

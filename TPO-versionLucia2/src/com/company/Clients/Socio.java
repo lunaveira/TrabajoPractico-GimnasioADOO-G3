@@ -211,8 +211,6 @@ public class Socio {
 
 
     public void cambiarObjetivo() {
-     //   ArrayList<Entrenamiento> entrenamientos = null;
-     //   Rutina rutina = new Rutina(4,this.objetivo,1,entrenamientos,false);
         System.out.println("Nueva rutina creada para el nuevo objetivo: " + this.getTipoEstrategia());
     }
 
@@ -220,20 +218,16 @@ public class Socio {
         this.mediciones = new ArrayList<Medicion>();
         mediciones.add(medicion);
         pesoActual = medicion.getPeso();
-      for (TrofeoObservador trofeo : trofeos) {
-           //  trofeo.chequearPremio();
 
-       }
 
    }
 
-    public void verTrofeos() {
-        System.out.println("=======TROFEOS========");
+   /* public void verTrofeos() {
         for (TrofeoObservador trofeo : this.trofeos) {
             System.out.println(trofeo.getTipoTrofeo());
         }
 
-    }
+    } */
 
 
 

@@ -37,15 +37,18 @@ public class Entrenamiento {
         }
     }
 
+
+
     public void reforzarEntrenamiento(int reps, int series, int peso) {
         ArrayList<Ejercicio> lista = new ArrayList<>();
         for (Ejercicio ejercicio : ejercicios) {
             EjercicioReforzado reforzado = new EjercicioReforzado(ejercicio, reps, series, peso);
-            lista.add(reforzado);
+            reforzado.reforzarEjercicio();
         }
 
         this.ejercicios = lista;
     }
+
 
 
 

@@ -12,12 +12,7 @@ public class Objetivo {
 
     private Rutina rutina;
 
-   /* public Objetivo(TipoEstrategia tipoEstrategia, IObjetivoStrategy strategy, Socio socio, Rutina rutina) {
-        this.tipoEstrategia = tipoEstrategia;
-        this.strategy = strategy;
-        this.socio = socio;
-        this.rutina = rutina;
-    }  */
+
 
     public Objetivo() {
     }
@@ -60,8 +55,5 @@ public class Objetivo {
     }
 
 
-    public void verRutina() {
-        this.rutina.mostrarCadaRutina();
 
-    }
 }

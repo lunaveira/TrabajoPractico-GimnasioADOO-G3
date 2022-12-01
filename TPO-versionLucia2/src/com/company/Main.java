@@ -19,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Socio socio = new Socio(TipoEstrategia.BAJAR, "Lucia", "Naveira", 20, TipoSexo.FEMENINO, 53.4,20.1, 72.4);
+        Socio socio = new Socio(TipoEstrategia.BAJAR, "Lucia", "Naveira", 20, TipoSexo.FEMENINO, 51.4,20.1, 72.4);
 
         System.out.println("-----------SOCIO------------");
 
@@ -62,9 +62,7 @@ public class Main {
         rutina.reforzarRutina(2,2, 2);
 
         System.out.println(" ");
-
-
-
+        
 
 
 
@@ -72,8 +70,6 @@ public class Main {
 
 
         socio.cambiarObjetivo();
-
-
 
         objetivo.objCumplido();
 
@@ -83,29 +79,6 @@ public class Main {
 
 
         System.out.println("-----------TROFEOS------------");
-
-
-        //Trofeo del creido
-        socio.registrarMedicion(new AdapterMedicionConcreto().registrarMedicion());
-        socio.registrarMedicion(new AdapterMedicionConcreto().registrarMedicion());
-        socio.registrarMedicion(new AdapterMedicionConcreto().registrarMedicion());
-
-
-        //Trofeo a la constancia
-        objetivo.setStrategy(bajar);
-
-        TrofeoObservador trofeo = new Constancia(rutina);
-        rutina.rutinaCumplida();
-
-
-
-        //Trofeo de la dedicacion
-        objetivo.setStrategy(mantener);
-        objetivo.objCumplido();
-
-        socio.verTrofeos();
-
-
 
 
         socio.obtenerPremio();
