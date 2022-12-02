@@ -40,9 +40,8 @@ public class Main {
             case MANTENER: objetivo.setStrategy(mantener);
         }
 
-        objetivo.setSocio(socio);
 
-     //   ArrayList<Entrenamiento> entrenamientos = null;
+
 
 
 
@@ -50,19 +49,19 @@ public class Main {
 
         System.out.println("-----------RUTINAS------------");
 
-        Rutina rutina = new Rutina();
+      //  Rutina rutina = new Rutina();
 
-        rutina.mostrarCadaRutina();
+      //  rutina.mostrarCadaRutina();
 
         System.out.println(" ");
 
         System.out.println("------------RUTINA REFORZADA------------");
 
 
-        rutina.reforzarRutina(2,2, 2);
+     //   rutina.reforzarRutina(2,2, 3);
 
         System.out.println(" ");
-        
+
 
 
 
@@ -71,10 +70,11 @@ public class Main {
 
         socio.cambiarObjetivo();
 
-        objetivo.objCumplido();
+       // objetivo.objCumplido();
 
         System.out.println(" ");
 
+        objetivo.chequearObjCumplido(socio);
 
 
 

@@ -26,6 +26,7 @@ public class Socio {
     private Rutina rutina;
     private AdapterMedicionConcreto adapterMedicionConcreto;
     private ArrayList<TrofeoObservador> trofeos;
+    private ArrayList<TrofeoObservador> observadors;
 
 
 
@@ -41,21 +42,11 @@ public class Socio {
         this.pesoActual = pesoActual;
         this.grasaActual = grasaActual;
         this.masaActual = masaActual;
+        this.mediciones = new ArrayList<Medicion>();
+        this.observadors = new ArrayList<TrofeoObservador>();
 
-
-        this.trofeos = new ArrayList<TrofeoObservador>();
-         Creido creido = new Creido();
-         creido.setTipoTrofeo(TipoTrofeo.CREIDO);
-         this.trofeos.add(creido);
-
-
-          Dedicacion dedicacion = new Dedicacion();
-          dedicacion.setTipoTrofeo(TipoTrofeo.DEDICACION);
-          this.trofeos.add(dedicacion);
-
-          Constancia constancia = new Constancia(rutina);
-          constancia.setTipoTrofeo(TipoTrofeo.CONSTANCIA);
-          this.trofeos.add(constancia);
+        TrofeoObservador creido = new Creido();
+        this.observadors.add(creido);
 
 
 
@@ -212,22 +203,21 @@ public class Socio {
 
     public void cambiarObjetivo() {
         System.out.println("Nueva rutina creada para el nuevo objetivo: " + this.getTipoEstrategia());
+      //  rutina.crearRutina();
     }
 
    public void registrarMedicion(Medicion medicion) {
-        this.mediciones = new ArrayList<Medicion>();
-        mediciones.add(medicion);
-        pesoActual = medicion.getPeso();
+
+       Medicion med = adapterMedicionConcreto.registrarMedicion();
+        mediciones.add(med);
+
+        for(TrofeoObservador tr : observadors) {
+            tr.chequearPremio();
+        }
+
 
 
    }
-
-   /* public void verTrofeos() {
-        for (TrofeoObservador trofeo : this.trofeos) {
-            System.out.println(trofeo.getTipoTrofeo());
-        }
-
-    } */
 
 
 

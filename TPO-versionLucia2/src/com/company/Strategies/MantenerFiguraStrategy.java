@@ -1,11 +1,16 @@
 package com.company.Strategies;
 
+import com.company.Clients.Rutina;
 import com.company.Clients.Socio;
 
 public class MantenerFiguraStrategy implements IObjetivoStrategy{
 
     private String nombreObjetivo;
     private int valorConfigurable = 3;
+
+
+    private int nivelAerobico = 3;
+    private ExigenciaMuscular exigenciaMuscular = ExigenciaMuscular.MEDIA;
 
 
     public MantenerFiguraStrategy() {
@@ -24,5 +29,9 @@ public class MantenerFiguraStrategy implements IObjetivoStrategy{
         }
 
         return false;
+    }
+
+    public Rutina crearRutina() {
+        return new Rutina( nivelAerobico,  exigenciaMuscular);
     }
 }

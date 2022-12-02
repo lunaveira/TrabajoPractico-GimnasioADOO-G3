@@ -1,5 +1,6 @@
 package com.company.Strategies;
 
+import com.company.Clients.Rutina;
 import com.company.Clients.Socio;
 
 public class TonificarStrategy implements IObjetivoStrategy{
@@ -8,6 +9,10 @@ public class TonificarStrategy implements IObjetivoStrategy{
 
     private int grasaIdeal = 30;
     private int masaIdeal = 70;
+
+
+    private int nivelAerobico = 2;
+    private ExigenciaMuscular exigenciaMuscular = ExigenciaMuscular.BAJA;
 
 
     public TonificarStrategy() {
@@ -26,5 +31,10 @@ public class TonificarStrategy implements IObjetivoStrategy{
         }
 
         return false;
+    }
+
+
+    public Rutina crearRutina() {
+        return new Rutina( nivelAerobico,  exigenciaMuscular);
     }
 }

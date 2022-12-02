@@ -1,11 +1,16 @@
 package com.company.Strategies;
 
+import com.company.Clients.Rutina;
 import com.company.Clients.Socio;
 
 public class BajarPesoStrategy implements IObjetivoStrategy{
 
     private String nombreObjetivo;
     private int pesoObjetivo = 52;
+
+    private int nivelAerobico = 4;
+    private ExigenciaMuscular exigenciaMuscular = ExigenciaMuscular.ALTA;
+
 
 
     public BajarPesoStrategy() {
@@ -26,4 +31,10 @@ public class BajarPesoStrategy implements IObjetivoStrategy{
         return false;
 
     }
+
+
+    public Rutina crearRutina() {
+        return new Rutina( nivelAerobico,  exigenciaMuscular);
+    }
+
 }

@@ -13,6 +13,9 @@ public class Creido extends TrofeoObservador{
 
 
 
+
+
+
     @Override
     public void chequearPremio() {
 

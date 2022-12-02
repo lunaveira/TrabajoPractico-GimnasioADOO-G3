@@ -15,7 +15,7 @@ public class Dedicacion extends TrofeoObservador{
     @Override
     public void chequearPremio() {
 
-        if(objetivo.objCumplido()) {
+        if(objetivo.isCumplido()) {
             Notificacion notificacion = new Notificacion("Ganaste un trofeo a la dedicacion");
             notificador.setAdapterFirebase(new AdapterFirebase());
             notificador.notificar(notificacion);

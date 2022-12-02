@@ -12,7 +12,7 @@ public class RutinaController {
         this.rutina = rutina;
     }
 
-    public Rutina agregarRutina(Rutina rutina) {
-        return new Rutina();
-    }
+  //  public Rutina agregarRutina(Rutina rutina) {
+  //      return new Rutina();
+  //  }
 }

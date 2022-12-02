@@ -18,13 +18,11 @@ public class Constancia extends TrofeoObservador {
 
 
 
-    public Constancia(Rutina rutina) {
-        this.rutina = rutina;
-    }
+
 
     @Override
     public void chequearPremio() {
-        if(rutina.rutinaCumplida()) {
+        if(rutina.isCumplida()) {
             Notificacion notificacion = new Notificacion("Ganaste un trofeo a la constancia");
             notificador.setAdapterFirebase(new AdapterFirebase());
             notificador.notificar(notificacion);
