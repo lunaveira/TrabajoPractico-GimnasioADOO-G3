@@ -9,7 +9,7 @@ public class EjercicioReforzado extends Ejercicio {
 
     public EjercicioReforzado(Ejercicio ejercicio, int repsReforzadas, int seriesReforzadas, int pesoReforzado) {
         this.ejercicio = ejercicio;
-        this.setNombreEjercicio(ejercicio.getNombreEjercicio());
+        this.setNombre(ejercicio.getNombre());
         this.repsReforzadas = repsReforzadas;
         this.seriesReforzadas = seriesReforzadas;
         this.pesoReforzado = pesoReforzado;
@@ -19,7 +19,7 @@ public class EjercicioReforzado extends Ejercicio {
 
 
     public void reforzarEjercicio() {
-        System.out.println("Ejercicio: " + ejercicio.getNombreEjercicio());
+        System.out.println("Ejercicio: " + ejercicio.getNombre());
         System.out.println("Cantidad de series:  " + ejercicio.getSeries() * seriesReforzadas);
         System.out.println("Cantidad de repeticiones:  " + ejercicio.getReps() * repsReforzadas);
         System.out.println("Peso asignado:  " + ejercicio.getPesoAsignado() * pesoReforzado);

@@ -22,27 +22,16 @@ public class Rutina {
 
 
 
+
     public Rutina(int nivelAerobico, ExigenciaMuscular exigenciaMuscular) {
-       this.entrenamientos = new ArrayList<Entrenamiento>();
-       this.entrenamientos.add(new Entrenamiento(GrupoMuscular.BRAZOS, "Vuelos laterales"));
-        this.entrenamientos.add(new Entrenamiento(GrupoMuscular.BRAZOS, "Triceps"));
-        this.entrenamientos.add(new Entrenamiento(GrupoMuscular.BRAZOS, "Biceps"));
+        this.entrenamientos = new ArrayList<>();
+        this.entrenamientos.add(new Entrenamiento(exigenciaMuscular,nivelAerobico,GrupoMuscular.PIERNAS));
+        this.entrenamientos.add(new Entrenamiento(exigenciaMuscular,nivelAerobico,GrupoMuscular.PECHO));
+        this.entrenamientos.add(new Entrenamiento(exigenciaMuscular,nivelAerobico,GrupoMuscular.ESPALDA));
+        this.entrenamientos.add(new Entrenamiento(exigenciaMuscular,nivelAerobico,GrupoMuscular.BRAZOS));
+        this.entrenamientos.add(new Entrenamiento(exigenciaMuscular,nivelAerobico,GrupoMuscular.HOMBROS));
 
-
-       this.entrenamientos.add(new Entrenamiento(GrupoMuscular.ESPALDA, "Remo con barra1"));
-        this.entrenamientos.add(new Entrenamiento(GrupoMuscular.ESPALDA, "Remo con barra 2"));
-        this.entrenamientos.add(new Entrenamiento(GrupoMuscular.ESPALDA, "Remo con barra 3"));
-
-       this.entrenamientos.add(new Entrenamiento(GrupoMuscular.PECHO, "Press banco plano1"));
-        this.entrenamientos.add(new Entrenamiento(GrupoMuscular.PECHO, "Press banco plano2"));
-        this.entrenamientos.add(new Entrenamiento(GrupoMuscular.PECHO, "Press banco plano3"));
-
-       this.entrenamientos.add(new Entrenamiento(GrupoMuscular.PIERNAS, "Sentadillas1"));
-        this.entrenamientos.add(new Entrenamiento(GrupoMuscular.PIERNAS, "Sentadillas2"));
-        this.entrenamientos.add(new Entrenamiento(GrupoMuscular.PIERNAS, "Sentadillas3"));
-
-
-
+        this.observadors = new ArrayList<>();
         TrofeoObservador constancia = new Constancia();
         this.observadors.add(constancia);
     }

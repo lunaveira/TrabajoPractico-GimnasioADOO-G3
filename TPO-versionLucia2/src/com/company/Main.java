@@ -19,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Socio socio = new Socio(TipoEstrategia.BAJAR, "Lucia", "Naveira", 20, TipoSexo.FEMENINO, 51.4,20.1, 72.4);
+        Socio socio = new Socio(TipoEstrategia.TONIFICAR, "Lucia", "Naveira", 20, TipoSexo.FEMENINO, 51.4,20.1, 72.4);
 
         System.out.println("-----------SOCIO------------");
 
@@ -39,7 +39,7 @@ public class Main {
             case TONIFICAR: objetivo.setStrategy(tonificar);
             case MANTENER: objetivo.setStrategy(mantener);
         }
-
+        socio.setObjetivo(objetivo);
 
 
 
@@ -49,21 +49,20 @@ public class Main {
 
         System.out.println("-----------RUTINAS------------");
 
-      //  Rutina rutina = new Rutina();
-
-      //  rutina.mostrarCadaRutina();
+        socio.getObjetivo().crearRutina();
+        socio.getObjetivo().mostrarRutina();
 
         System.out.println(" ");
 
         System.out.println("------------RUTINA REFORZADA------------");
 
 
-     //   rutina.reforzarRutina(2,2, 3);
+        socio.getObjetivo().getRutina().reforzarRutina(2,2, 3);
+        socio.getObjetivo().mostrarRutina();
 
         System.out.println(" ");
 
-
-
+        /*
 
         System.out.println("-----------NUEVO OBJETIVO------------");
 
@@ -83,7 +82,7 @@ public class Main {
 
         socio.obtenerPremio();
 
-
+        */
 
 
 

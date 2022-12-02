@@ -1,5 +1,7 @@
 package com.company.Clients;
 
+import com.company.Strategies.ExigenciaMuscular;
+
 import java.util.ArrayList;
 
 public class Ejercicio {
@@ -8,21 +10,21 @@ public class Ejercicio {
     private int reps;
     private int pesoAsignado;
     private int nivelAerobico;
-    private int exigenciaMuscular;
+    private ExigenciaMuscular exigenciaMuscular;
     private GrupoMuscular grupoMuscular;
-    private String nombreEjercicio;
+
+    private String nombre;
 
 
 
-
-    public Ejercicio( GrupoMuscular grupoMuscular, String nombreEjercicio) {
+    public Ejercicio(String nombre, ExigenciaMuscular exigenciaMuscular, int nivelAerobico , GrupoMuscular grupo) {
         this.series = 3;
         this.reps =  12;
         this.pesoAsignado = 10;
-        this.nivelAerobico = 5;
-        this.exigenciaMuscular = 10;
-        this.grupoMuscular = grupoMuscular;
-        this.nombreEjercicio = nombreEjercicio;
+        this.nivelAerobico = nivelAerobico;
+        this.exigenciaMuscular = exigenciaMuscular;
+        this.grupoMuscular = grupo;
+        this.nombre = nombre;
     }
 
     public Ejercicio() {
@@ -30,10 +32,11 @@ public class Ejercicio {
     }
 
     public void mostrarCadaEjercicio() {
-        System.out.println("Ejercicio: " + getNombreEjercicio());
+        System.out.println("Ejercicio: "+ getNombre());
         System.out.println("Cantidad de series: " + getSeries());
         System.out.println("Cantidad de repeticiones: " + getReps());
         System.out.println("Peso asignado: " + getPesoAsignado());
+        System.out.println(" ");
     }
 
 
@@ -69,13 +72,6 @@ public class Ejercicio {
         this.nivelAerobico = nivelAerobico;
     }
 
-    public int getExigenciaMuscular() {
-        return exigenciaMuscular;
-    }
-
-    public void setExigenciaMuscular(int exigenciaMuscular) {
-        this.exigenciaMuscular = exigenciaMuscular;
-    }
 
     public GrupoMuscular getGrupoMuscular() {
         return grupoMuscular;
@@ -85,13 +81,11 @@ public class Ejercicio {
         this.grupoMuscular = grupoMuscular;
     }
 
-    public String getNombreEjercicio() {
-        return nombreEjercicio;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreEjercicio(String nombreEjercicio) {
-        this.nombreEjercicio = nombreEjercicio;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
-
-
 }

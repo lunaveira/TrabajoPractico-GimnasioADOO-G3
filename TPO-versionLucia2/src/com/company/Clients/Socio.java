@@ -208,14 +208,12 @@ public class Socio {
 
    public void registrarMedicion(Medicion medicion) {
 
-       Medicion med = adapterMedicionConcreto.registrarMedicion();
+        Medicion med = adapterMedicionConcreto.registrarMedicion();
         mediciones.add(med);
 
         for(TrofeoObservador tr : observadors) {
             tr.chequearPremio();
         }
-
-
 
    }
 

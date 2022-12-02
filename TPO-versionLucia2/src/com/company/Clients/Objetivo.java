@@ -22,7 +22,7 @@ public class Objetivo {
 
 
     public Objetivo() {
-
+        this.observadors = new ArrayList<>();
         TrofeoObservador dedicacion = new Dedicacion();
         this.observadors.add(dedicacion);
 
@@ -69,15 +69,6 @@ public class Objetivo {
         this.cumplido = cumplido;
     }
 
-    /* public boolean objCumplido() {
-
-        for(TrofeoObservador tr : observadors) {
-            tr.chequearPremio();
-        }
-
-
-    } */
-
     public void chequearObjCumplido(Socio socio){
         if(strategy.objCumplido(socio)) {
             this.cumplido = true;
@@ -87,10 +78,13 @@ public class Objetivo {
         }
     }
 
-
-
     public void crearRutina() {
         this.rutina = this.strategy.crearRutina();
+
+    }
+
+    public void mostrarRutina() {
+        this.rutina.mostrarCadaRutina();
 
     }
 
