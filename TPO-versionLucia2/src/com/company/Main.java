@@ -34,11 +34,14 @@ public class Main {
         BajarPesoStrategy bajar = new BajarPesoStrategy();
         MantenerFiguraStrategy mantener = new MantenerFiguraStrategy();
 
+        /*
         switch (socio.getTipoEstrategia()) {
             case BAJAR: objetivo.setStrategy(bajar);
             case TONIFICAR: objetivo.setStrategy(tonificar);
             case MANTENER: objetivo.setStrategy(mantener);
         }
+         */
+        objetivo.setStrategy(tonificar);
         socio.setObjetivo(objetivo);
 
 
@@ -47,7 +50,7 @@ public class Main {
 
         System.out.println(" ");
 
-        System.out.println("-----------RUTINAS------------");
+        System.out.println("-----------RUTINA------------");
 
         socio.getObjetivo().crearRutina();
         socio.getObjetivo().mostrarRutina();

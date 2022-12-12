@@ -15,6 +15,8 @@ public class Ejercicio {
 
     private String nombre;
 
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_RESET = "\u001B[0m";
 
 
     public Ejercicio(String nombre, ExigenciaMuscular exigenciaMuscular, int nivelAerobico , GrupoMuscular grupo) {
@@ -32,11 +34,8 @@ public class Ejercicio {
     }
 
     public void mostrarCadaEjercicio() {
-        System.out.println("Ejercicio: "+ getNombre());
-        System.out.println("Cantidad de series: " + getSeries());
-        System.out.println("Cantidad de repeticiones: " + getReps());
-        System.out.println("Peso asignado: " + getPesoAsignado());
-        System.out.println(" ");
+        System.out.println(getNombre() + " | " + ANSI_RED +"Sets: " +  getSeries() + ANSI_RESET + " | " +ANSI_RED +"Reps: " + getReps() +ANSI_RESET +" | " +ANSI_RED +"Load: " + getPesoAsignado() + "Kg"+ ANSI_RESET);
+
     }
 
 

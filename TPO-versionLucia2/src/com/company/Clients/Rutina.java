@@ -19,7 +19,8 @@ public class Rutina {
     private int nivelAerobico;
     private int exigenciaMuscular;
 
-
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_RESET = "\u001B[0m";
 
 
 
@@ -58,8 +59,13 @@ public class Rutina {
     }
 
     public void mostrarCadaRutina() {
+        int i = 0;
+        String[] grupos = {"PIERNAS","PECHO","ESPALDA","HOMBROS","BRAZOS"};
         for (Entrenamiento entrenamiento : this.entrenamientos) {
+            System.out.println(ANSI_BLUE+"-----------"+ grupos[i] +"------------"+ANSI_RESET);
             entrenamiento.mostrarEntrenamiento();
+            i++;
+            System.out.println();
         }
 
     }
@@ -67,7 +73,7 @@ public class Rutina {
     public void reforzarRutina(int repsReforzadas, int seriesReforzadas, int pesoReforzado) {
         for (Entrenamiento entrenamiento : entrenamientos) {
             entrenamiento.reforzarEntrenamiento(repsReforzadas, seriesReforzadas, pesoReforzado);
-            entrenamiento.mostrarEntrenamiento();
+            this.setEntrenamientos(entrenamientos);
         }
     }
 

@@ -19,10 +19,9 @@ public class EjercicioReforzado extends Ejercicio {
 
 
     public void reforzarEjercicio() {
-        System.out.println("Ejercicio: " + ejercicio.getNombre());
-        System.out.println("Cantidad de series:  " + ejercicio.getSeries() * seriesReforzadas);
-        System.out.println("Cantidad de repeticiones:  " + ejercicio.getReps() * repsReforzadas);
-        System.out.println("Peso asignado:  " + ejercicio.getPesoAsignado() * pesoReforzado);
+        ejercicio.setSeries(ejercicio.getSeries() * seriesReforzadas);
+        ejercicio.setReps(ejercicio.getReps() * repsReforzadas);
+        ejercicio.setPesoAsignado(ejercicio.getPesoAsignado() * pesoReforzado);
     }
 
 }
