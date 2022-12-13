@@ -3,9 +3,12 @@ package com.company.Clients;
 import com.company.Strategies.ExigenciaMuscular;
 
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.random.*;
 
 public class Ejercicio {
 
+    Random random = new Random();
     private int series;
     private int reps;
     private int pesoAsignado;
@@ -20,9 +23,9 @@ public class Ejercicio {
 
 
     public Ejercicio(String nombre, ExigenciaMuscular exigenciaMuscular, int nivelAerobico , GrupoMuscular grupo) {
-        this.series = 3;
-        this.reps =  12;
-        this.pesoAsignado = 10;
+        this.series = random.nextInt(4 - 2 + 1) + 2;
+        this.reps =  random.nextInt(15 - 5 + 1) + 5;
+        this.pesoAsignado = random.nextInt(100 - 90 + 1) + 90;
         this.nivelAerobico = nivelAerobico;
         this.exigenciaMuscular = exigenciaMuscular;
         this.grupoMuscular = grupo;

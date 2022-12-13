@@ -29,7 +29,7 @@ public class Objetivo {
     }
 
     public TipoEstrategia getTipoEstrategia() {
-        return tipoEstrategia;
+        return this.tipoEstrategia;
     }
 
     public void setTipoEstrategia(TipoEstrategia tipoEstrategia) {
@@ -40,8 +40,9 @@ public class Objetivo {
         return strategy;
     }
 
-    public void setStrategy(IObjetivoStrategy strategy) {
+    public void setStrategy(IObjetivoStrategy strategy, TipoEstrategia tipoEstrategia) {
         this.strategy = strategy;
+        setTipoEstrategia(tipoEstrategia);
     }
 
 

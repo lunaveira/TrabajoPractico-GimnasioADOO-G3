@@ -41,7 +41,7 @@ public class Main {
             case MANTENER: objetivo.setStrategy(mantener);
         }
          */
-        objetivo.setStrategy(tonificar);
+        objetivo.setStrategy(tonificar, TipoEstrategia.TONIFICAR);
         socio.setObjetivo(objetivo);
 
 
@@ -65,13 +65,29 @@ public class Main {
 
         System.out.println(" ");
 
-        /*
+
 
         System.out.println("-----------NUEVO OBJETIVO------------");
 
+        objetivo.setStrategy(bajar, TipoEstrategia.BAJAR);
+        socio.cambiarObjetivo(objetivo);
 
-        socio.cambiarObjetivo();
+        System.out.println("-----------RUTINA------------");
 
+        socio.getObjetivo().crearRutina();
+        socio.getObjetivo().mostrarRutina();
+
+        System.out.println(" ");
+
+        System.out.println("------------RUTINA REFORZADA------------");
+
+
+        socio.getObjetivo().getRutina().reforzarRutina(2,2, 3);
+        socio.getObjetivo().mostrarRutina();
+
+        System.out.println(" ");
+
+        /*
        // objetivo.objCumplido();
 
         System.out.println(" ");
@@ -85,8 +101,9 @@ public class Main {
 
         socio.obtenerPremio();
 
-        */
 
+
+         */
 
 
 

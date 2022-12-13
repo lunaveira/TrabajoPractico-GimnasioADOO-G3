@@ -201,8 +201,10 @@ public class Socio {
     }
 
 
-    public void cambiarObjetivo() {
-        System.out.println("Nueva rutina creada para el nuevo objetivo: " + this.getTipoEstrategia());
+    public void cambiarObjetivo(Objetivo objetivo) {
+        setObjetivo(objetivo);
+        System.out.println("Nueva rutina creada para el nuevo objetivo: " + this.objetivo.getTipoEstrategia());
+
       //  rutina.crearRutina();
     }
 
