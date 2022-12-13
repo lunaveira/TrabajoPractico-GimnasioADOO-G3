@@ -46,12 +46,6 @@ public class Socio {
         this.observadors = new ArrayList<TrofeoObservador>();
         this.trofeos = new ArrayList<TrofeoObservador>();
 
-        //TrofeoObservador creido = new Creido();
-        //this.observadors.add(creido);
-
-
-
-
     }
 
    public void mostrarSocio(Socio socio) {
@@ -205,20 +199,22 @@ public class Socio {
     public void cambiarObjetivo(Objetivo objetivo) {
         setObjetivo(objetivo);
         System.out.println("Nueva rutina creada para el nuevo objetivo: " + this.objetivo.getTipoEstrategia());
-
-      //  rutina.crearRutina();
     }
 
    public void registrarMedicion(Medicion medicion) {
-
-        //Medicion med = adapterMedicionConcreto.registrarMedicion();
         mediciones.add(medicion);
 
         for(TrofeoObservador tr : observadors) {
             tr.chequearPremio();
         }
-
    }
+
+    public void verTrofeos() {
+        System.out.println(("-----------TROFEOS------------"));
+        for (TrofeoObservador tr : this.trofeos) {
+            System.out.println(tr.getDescripcion());
+        }
+    }
 
 
 

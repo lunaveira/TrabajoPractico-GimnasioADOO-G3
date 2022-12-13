@@ -8,8 +8,10 @@ import com.company.Clients.Socio;
 public class Creido extends TrofeoObservador{
 
     private Socio socio;
+    private String descripcion;
 
     public Creido(Socio socio){
+        this.descripcion = "Trofeo Creido";
         this.socio = socio;
     }
 
@@ -20,8 +22,11 @@ public class Creido extends TrofeoObservador{
             Notificacion notificacion = new Notificacion("Ganaste el premio al creido");
             Notificador.setAdapterFirebase(new AdapterFirebase());
             Notificador.notificar(notificacion);
-            socio.agregarTrofeo(this);
+            this.socio.agregarTrofeo(this);
         }
+    }
 
+    public String getDescripcion() {
+        return this.descripcion;
     }
 }

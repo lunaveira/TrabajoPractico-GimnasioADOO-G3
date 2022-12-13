@@ -9,10 +9,11 @@ import com.company.Clients.Socio;
 public class Dedicacion extends TrofeoObservador{
 
     private Objetivo objetivo;
-    private Notificador notificador;
     private Socio socio;
+    private String descripcion;
 
     public Dedicacion(Objetivo objetivo){
+        this.descripcion = "Trofeo Dedicacion";
         this.objetivo = objetivo;
         this.socio = objetivo.getSocio();
     }
@@ -22,11 +23,14 @@ public class Dedicacion extends TrofeoObservador{
 
         if(objetivo.isCumplido()) {
             Notificacion notificacion = new Notificacion("Ganaste un trofeo a la dedicacion");
-            notificador.setAdapterFirebase(new AdapterFirebase());
-            notificador.notificar(notificacion);
+            Notificador.setAdapterFirebase(new AdapterFirebase());
+            Notificador.notificar(notificacion);
 
             this.socio.agregarTrofeo(this);
         }
+    }
 
+    public String getDescripcion() {
+        return descripcion;
     }
 }

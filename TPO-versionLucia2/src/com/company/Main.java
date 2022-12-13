@@ -16,6 +16,22 @@ import java.util.ArrayList;
 
 public class Main {
 
+    public static void Rutina(Socio socio){
+        System.out.println("-----------------RUTINA------------------");
+
+        socio.getObjetivo().crearRutina();
+        socio.getObjetivo().mostrarRutina();
+        System.out.println();
+
+        System.out.println("------------RUTINA REFORZADA-------------");
+
+        socio.getObjetivo().getRutina().reforzarRutina(2,2, 3);
+        socio.getObjetivo().mostrarRutina();
+        System.out.println();
+    }
+
+
+
     public static void main(String[] args) {
 
 
@@ -25,85 +41,41 @@ public class Main {
 
         socio.mostrarSocio(socio);
         socio.ingresar("lunaveira", "lucia123");
+        System.out.println();
+
 
         Objetivo objetivo = new Objetivo(socio);
-
-
 
         TonificarStrategy tonificar = new TonificarStrategy();
         BajarPesoStrategy bajar = new BajarPesoStrategy();
         MantenerFiguraStrategy mantener = new MantenerFiguraStrategy();
 
-        /*
         switch (socio.getTipoEstrategia()) {
-            case BAJAR: objetivo.setStrategy(bajar);
-            case TONIFICAR: objetivo.setStrategy(tonificar);
-            case MANTENER: objetivo.setStrategy(mantener);
+            case BAJAR: objetivo.setStrategy(bajar, TipoEstrategia.BAJAR);
+            case TONIFICAR: objetivo.setStrategy(tonificar,TipoEstrategia.TONIFICAR);
+            case MANTENER: objetivo.setStrategy(mantener, TipoEstrategia.MANTENER);
         }
-         */
-        objetivo.setStrategy(tonificar, TipoEstrategia.TONIFICAR);
         socio.setObjetivo(objetivo);
 
 
+        Rutina(socio);
 
 
-
-        System.out.println(" ");
-
-        System.out.println("-----------RUTINA------------");
-
-        socio.getObjetivo().crearRutina();
-        socio.getObjetivo().mostrarRutina();
-
-        System.out.println(" ");
-
-        System.out.println("------------RUTINA REFORZADA------------");
-
-
-        socio.getObjetivo().getRutina().reforzarRutina(2,2, 3);
-        socio.getObjetivo().mostrarRutina();
-
-        System.out.println(" ");
-
-
-
-        System.out.println("-----------NUEVO OBJETIVO------------");
+        System.out.println("-------------NUEVO OBJETIVO--------------");
 
         objetivo.setStrategy(bajar, TipoEstrategia.BAJAR);
         socio.cambiarObjetivo(objetivo);
 
-        System.out.println("-----------RUTINA------------");
-
-        socio.getObjetivo().crearRutina();
-        socio.getObjetivo().mostrarRutina();
-
-        System.out.println(" ");
-
-        System.out.println("------------RUTINA REFORZADA------------");
-
-
-        socio.getObjetivo().getRutina().reforzarRutina(2,2, 3);
-        socio.getObjetivo().mostrarRutina();
-
-        System.out.println(" ");
-
-
-
-
-        System.out.println("-----------TROFEOS------------");
-
-
-        TrofeoObservador trofeoObservador = new Creido(socio);
-        socio.agregarObservador(trofeoObservador);
+        Rutina(socio);
 
         //Trofeo del creido
+        TrofeoObservador trofeoObservador = new Creido(socio);
+        socio.agregarObservador(trofeoObservador);
         socio.registrarMedicion(new AdapterMedicionConcreto().registrarMedicion());
         socio.registrarMedicion(new AdapterMedicionConcreto().registrarMedicion());
         socio.registrarMedicion(new AdapterMedicionConcreto().registrarMedicion());
 
-        //Trofeo a la constancia
-        socio.getObjetivo().setStrategy(bajar, TipoEstrategia.BAJAR);;
-        socio.getObjetivo().crearRutina();
+        //Trofeo a la constancia | hay que cambiar el peso
         TrofeoObservador trofeoObservador2 = new Constancia(socio,socio.getObjetivo().getRutina());
         socio.getObjetivo().getRutina().agregarObservador(trofeoObservador2);
         socio.getObjetivo().getRutina().chequearRutinaCumplida();
@@ -111,10 +83,9 @@ public class Main {
         //Trofeo de la dedicacion
         TrofeoObservador trofeoObservador3 = new Dedicacion(socio.getObjetivo());
         socio.getObjetivo().agregarObservador(trofeoObservador3);
-        objetivo.setStrategy(tonificar, TipoEstrategia.TONIFICAR);
         socio.getObjetivo().chequearObjCumplido();
 
-
+        socio.verTrofeos();
 
     }
 }

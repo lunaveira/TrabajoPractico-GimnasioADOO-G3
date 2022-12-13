@@ -10,16 +10,17 @@ public class Constancia extends TrofeoObservador {
 
     private Rutina rutina;
     private Socio socio;
+    private String descripcion;
 
     public Constancia(Socio socio, Rutina rutina){
+        this.descripcion = "Trofeo Constancia";
         this.rutina = rutina;
         this.socio = socio;
     }
 
-
-
-
-
+    public String getDescripcion() {
+        return descripcion;
+    }
 
     @Override
     public void chequearPremio() {
