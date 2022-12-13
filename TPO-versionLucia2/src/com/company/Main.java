@@ -105,6 +105,21 @@ public class Main {
 
          */
 
+        TrofeoObservador trofeoObservador = new Creido(socio);
+        socio.agregarObservador(trofeoObservador);
+
+        //Trofeo del creido
+        socio.registrarMedicion(new AdapterMedicionConcreto().registrarMedicion());
+        socio.registrarMedicion(new AdapterMedicionConcreto().registrarMedicion());
+        socio.registrarMedicion(new AdapterMedicionConcreto().registrarMedicion());
+
+        //Trofeo a la constancia
+        socio.getObjetivo().setStrategy(bajar, TipoEstrategia.BAJAR);;
+        socio.getObjetivo().crearRutina();
+        TrofeoObservador trofeoObservador2 = new Constancia(socio,socio.getObjetivo().getRutina());
+        socio.getObjetivo().getRutina().agregarObservador(trofeoObservador2);
+        //socio.getObjetivo().verRutina();
+        socio.getObjetivo().getRutina().chequearRutinaCumplida();
 
 
 

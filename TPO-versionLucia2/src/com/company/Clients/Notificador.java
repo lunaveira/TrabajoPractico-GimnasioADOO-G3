@@ -13,11 +13,11 @@ public class Notificador {
         return adapterFirebase;
     }
 
-    public void setAdapterFirebase(AdapterFirebase adapterFirebase) {
-        this.adapterFirebase = adapterFirebase;
+    public static void setAdapterFirebase(AdapterFirebase adapterFire) {
+        adapterFirebase = adapterFire;
     }
 
-    public void notificar(Notificacion notificacion) {
+    public static void notificar(Notificacion notificacion) {
         Notificador.adapterFirebase.notificar(notificacion);
     }
 

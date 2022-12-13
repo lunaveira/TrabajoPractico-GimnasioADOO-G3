@@ -44,9 +44,10 @@ public class Socio {
         this.masaActual = masaActual;
         this.mediciones = new ArrayList<Medicion>();
         this.observadors = new ArrayList<TrofeoObservador>();
+        this.trofeos = new ArrayList<TrofeoObservador>();
 
-        TrofeoObservador creido = new Creido();
-        this.observadors.add(creido);
+        //TrofeoObservador creido = new Creido();
+        //this.observadors.add(creido);
 
 
 
@@ -197,7 +198,7 @@ public class Socio {
     }
 
     public void agregarObservador(TrofeoObservador trofeo) {
-        trofeos.add(trofeo);
+        observadors.add(trofeo);
     }
 
 
@@ -210,8 +211,8 @@ public class Socio {
 
    public void registrarMedicion(Medicion medicion) {
 
-        Medicion med = adapterMedicionConcreto.registrarMedicion();
-        mediciones.add(med);
+        //Medicion med = adapterMedicionConcreto.registrarMedicion();
+        mediciones.add(medicion);
 
         for(TrofeoObservador tr : observadors) {
             tr.chequearPremio();

@@ -47,7 +47,7 @@ public class Objetivo {
 
 
     public Rutina getRutina() {
-        return rutina;
+        return this.rutina;
     }
 
     public void setRutina(Rutina rutina) {

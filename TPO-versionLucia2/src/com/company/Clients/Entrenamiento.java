@@ -170,7 +170,10 @@ public class Entrenamiento {
     }
 
     public boolean entrenamientoCumplido(){
-        return this.entrenamientoCompleto = true;
+        /*
+        Alguna forma de ver cuantas series y reps se hicieron y comparar para luego retornar un BOOLEAN
+         */
+        return true;
     }
 
     public void mostrarEntrenamiento() {

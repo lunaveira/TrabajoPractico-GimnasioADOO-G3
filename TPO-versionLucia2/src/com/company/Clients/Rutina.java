@@ -32,20 +32,26 @@ public class Rutina {
         this.entrenamientos.add(new Entrenamiento(exigenciaMuscular,nivelAerobico,GrupoMuscular.BRAZOS));
         this.entrenamientos.add(new Entrenamiento(exigenciaMuscular,nivelAerobico,GrupoMuscular.HOMBROS));
 
-        this.observadors = new ArrayList<>();
-        TrofeoObservador constancia = new Constancia();
-        this.observadors.add(constancia);
+        this.observadors =new ArrayList<TrofeoObservador>();
     }
 
 
 
     public void chequearRutinaCumplida() {
+        int contador=0;
         for (Entrenamiento e : entrenamientos) {
-            if (e.entrenamientoCumplido()) {
+            if (!e.entrenamientoCumplido()) {
+                break;
+            } else {
+                contador++;
+            }
+            if(contador == 5){
+                setCumplida(true);
                 for(TrofeoObservador tr : observadors) {
                     tr.chequearPremio();
                 }
             }
+
         }
     }
 
@@ -75,6 +81,10 @@ public class Rutina {
             entrenamiento.reforzarEntrenamiento(repsReforzadas, seriesReforzadas, pesoReforzado);
             this.setEntrenamientos(entrenamientos);
         }
+    }
+
+    public void agregarObservador(TrofeoObservador trofeo) {
+        observadors.add(trofeo);
     }
 
     public int getDiasTraining() {
@@ -110,7 +120,7 @@ public class Rutina {
     }
 
     public boolean isCumplida() {
-        return cumplida;
+        return this.cumplida;
     }
 
     public void setCumplida(boolean cumplida) {

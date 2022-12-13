@@ -9,12 +9,13 @@ import com.company.Clients.Socio;
 public class Constancia extends TrofeoObservador {
 
     private Rutina rutina;
-
     private Socio socio;
 
+    public Constancia(Socio socio, Rutina rutina){
+        this.rutina = rutina;
+        this.socio = socio;
+    }
 
-
-    private Notificador notificador;
 
 
 
@@ -24,8 +25,8 @@ public class Constancia extends TrofeoObservador {
     public void chequearPremio() {
         if(rutina.isCumplida()) {
             Notificacion notificacion = new Notificacion("Ganaste un trofeo a la constancia");
-            notificador.setAdapterFirebase(new AdapterFirebase());
-            notificador.notificar(notificacion);
+            Notificador.setAdapterFirebase(new AdapterFirebase());
+            Notificador.notificar(notificacion);
 
             this.socio.agregarTrofeo(this);
 

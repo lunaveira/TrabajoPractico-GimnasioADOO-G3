@@ -8,22 +8,19 @@ import com.company.Clients.Socio;
 public class Creido extends TrofeoObservador{
 
     private Socio socio;
-    private Notificador notificador;
 
-
-
-
-
-
+    public Creido(Socio socio){
+        this.socio = socio;
+    }
 
     @Override
     public void chequearPremio() {
 
         if(socio.getMediciones().size()>=3) {
             Notificacion notificacion = new Notificacion("Ganaste el premio al creido");
-            notificador.setAdapterFirebase(new AdapterFirebase());
-            notificador.notificar(notificacion);
-            this.socio.agregarTrofeo(this);
+            Notificador.setAdapterFirebase(new AdapterFirebase());
+            Notificador.notificar(notificacion);
+            socio.agregarTrofeo(this);
         }
 
     }
