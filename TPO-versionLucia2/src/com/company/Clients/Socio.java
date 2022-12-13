@@ -222,19 +222,4 @@ public class Socio {
 
 
 
-    public void obtenerPremio() {
-        if (trofeos != null ) {
-            for (TrofeoObservador trofeo: trofeos) {
-                if (trofeo instanceof Dedicacion) {
-                    System.out.println("estas en dedicacion");
-                } else if (trofeo instanceof Creido) {
-                    System.out.println("estas en creido");
-                } else if (trofeo instanceof Constancia) {
-                    System.out.println("estas en constancia");
-                }
-            }
-        }
-    }
-
-
 }

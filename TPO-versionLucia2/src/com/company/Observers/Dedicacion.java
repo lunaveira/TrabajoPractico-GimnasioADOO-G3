@@ -12,6 +12,11 @@ public class Dedicacion extends TrofeoObservador{
     private Notificador notificador;
     private Socio socio;
 
+    public Dedicacion(Objetivo objetivo){
+        this.objetivo = objetivo;
+        this.socio = objetivo.getSocio();
+    }
+
     @Override
     public void chequearPremio() {
 

@@ -19,13 +19,21 @@ public class Objetivo {
 
     private boolean cumplido = true;
 
+    private Socio socio;
 
 
-    public Objetivo() {
-        this.observadors = new ArrayList<>();
-        TrofeoObservador dedicacion = new Dedicacion();
-        this.observadors.add(dedicacion);
 
+    public Objetivo(Socio socio) {
+        this.observadors = new ArrayList<TrofeoObservador>();
+        this.socio = socio;
+    }
+
+    public Socio getSocio() {
+        return socio;
+    }
+
+    public void setSocio(Socio socio) {
+        this.socio = socio;
     }
 
     public TipoEstrategia getTipoEstrategia() {
@@ -70,8 +78,8 @@ public class Objetivo {
         this.cumplido = cumplido;
     }
 
-    public void chequearObjCumplido(Socio socio){
-        if(strategy.objCumplido(socio)) {
+    public void chequearObjCumplido(){
+        if(this.strategy.objCumplido(this.socio)) {
             this.cumplido = true;
             for(TrofeoObservador tr : observadors) {
                 tr.chequearPremio();
@@ -89,6 +97,9 @@ public class Objetivo {
 
     }
 
+    public void agregarObservador(TrofeoObservador trofeo) {
+        observadors.add(trofeo);
+    }
 
 
 

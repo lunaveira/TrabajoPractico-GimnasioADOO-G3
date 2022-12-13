@@ -1,6 +1,9 @@
 package com.company.Controllers;
 
 import com.company.Clients.Objetivo;
+import com.company.Clients.Socio;
+import com.company.Clients.TipoEstrategia;
+import com.company.Clients.TipoSexo;
 
 public class ObjetivoController {
 
@@ -11,6 +14,8 @@ public class ObjetivoController {
     }
 
     public Objetivo agregarObjetivo(Objetivo objetivo) {
-        return new Objetivo();
+        Socio socio = new Socio(TipoEstrategia.TONIFICAR, "Lucia", "Naveira", 20, TipoSexo.FEMENINO, 51.4,20.1, 72.4);
+
+        return new Objetivo(socio);
     }
 }

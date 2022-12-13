@@ -26,7 +26,7 @@ public class Main {
         socio.mostrarSocio(socio);
         socio.ingresar("lunaveira", "lucia123");
 
-        Objetivo objetivo = new Objetivo();
+        Objetivo objetivo = new Objetivo(socio);
 
 
 
@@ -87,23 +87,11 @@ public class Main {
 
         System.out.println(" ");
 
-        /*
-       // objetivo.objCumplido();
-
-        System.out.println(" ");
-
-        objetivo.chequearObjCumplido(socio);
 
 
 
         System.out.println("-----------TROFEOS------------");
 
-
-        socio.obtenerPremio();
-
-
-
-         */
 
         TrofeoObservador trofeoObservador = new Creido(socio);
         socio.agregarObservador(trofeoObservador);
@@ -118,9 +106,13 @@ public class Main {
         socio.getObjetivo().crearRutina();
         TrofeoObservador trofeoObservador2 = new Constancia(socio,socio.getObjetivo().getRutina());
         socio.getObjetivo().getRutina().agregarObservador(trofeoObservador2);
-        //socio.getObjetivo().verRutina();
         socio.getObjetivo().getRutina().chequearRutinaCumplida();
 
+        //Trofeo de la dedicacion
+        TrofeoObservador trofeoObservador3 = new Dedicacion(socio.getObjetivo());
+        socio.getObjetivo().agregarObservador(trofeoObservador3);
+        objetivo.setStrategy(tonificar, TipoEstrategia.TONIFICAR);
+        socio.getObjetivo().chequearObjCumplido();
 
 
 
