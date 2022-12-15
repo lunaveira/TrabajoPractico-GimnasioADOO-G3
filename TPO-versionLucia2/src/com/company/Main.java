@@ -16,18 +16,25 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static void Rutina(Socio socio){
+    //una estrategia cree una rutina
+    //que se refuerce dicha rutina
+    //que los observers funcionen
+    //  -
+
+    public static void Rutina(Socio socio, boolean reforzar){
         System.out.println("-----------------RUTINA------------------");
 
         socio.getObjetivo().crearRutina();
         socio.getObjetivo().mostrarRutina();
         System.out.println();
 
-        System.out.println("------------RUTINA REFORZADA-------------");
+        if(reforzar){
+            System.out.println("------------RUTINA REFORZADA-------------");
 
-        socio.getObjetivo().getRutina().reforzarRutina(2,2, 3);
-        socio.getObjetivo().mostrarRutina();
-        System.out.println();
+            socio.getObjetivo().getRutina().reforzarRutina(2,2, 3);
+            socio.getObjetivo().mostrarRutina();
+            System.out.println();
+        }
     }
 
 
@@ -35,7 +42,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Socio socio = new Socio(TipoEstrategia.TONIFICAR, "Lucia", "Naveira", 20, TipoSexo.FEMENINO, 51.4,20.1, 72.4);
+        Socio socio = new Socio(TipoEstrategia.BAJAR, "Lucia", "Naveira", 20, TipoSexo.FEMENINO, 51.0,20.1, 72.4);
 
         System.out.println("-----------SOCIO------------");
 
@@ -43,22 +50,27 @@ public class Main {
         socio.ingresar("lunaveira", "lucia123");
         System.out.println();
 
-
         Objetivo objetivo = new Objetivo(socio);
 
         TonificarStrategy tonificar = new TonificarStrategy();
         BajarPesoStrategy bajar = new BajarPesoStrategy();
         MantenerFiguraStrategy mantener = new MantenerFiguraStrategy();
 
+
+        //objetivo.setStrategy(bajar, TipoEstrategia.BAJAR);
+        //objetivo.setStrategy(tonificar,TipoEstrategia.TONIFICAR);
+        //objetivo.setStrategy(mantener, TipoEstrategia.MANTENER);
+        /*
         switch (socio.getTipoEstrategia()) {
-            case BAJAR: objetivo.setStrategy(bajar, TipoEstrategia.BAJAR);
-            case TONIFICAR: objetivo.setStrategy(tonificar,TipoEstrategia.TONIFICAR);
-            case MANTENER: objetivo.setStrategy(mantener, TipoEstrategia.MANTENER);
+
         }
+
+         */
+        objetivo.setStrategy(mantener, TipoEstrategia.MANTENER);
         socio.setObjetivo(objetivo);
 
 
-        Rutina(socio);
+        Rutina(socio,true);
 
 
         System.out.println("-------------NUEVO OBJETIVO--------------");
@@ -66,26 +78,25 @@ public class Main {
         objetivo.setStrategy(bajar, TipoEstrategia.BAJAR);
         socio.cambiarObjetivo(objetivo);
 
-        Rutina(socio);
+        Rutina(socio,false);
 
         //Trofeo del creido
         TrofeoObservador trofeoObservador = new Creido(socio);
         socio.agregarObservador(trofeoObservador);
-        socio.registrarMedicion(new AdapterMedicionConcreto().registrarMedicion());
+        //socio.registrarMedicion(new AdapterMedicionConcreto().registrarMedicion());
         socio.registrarMedicion(new AdapterMedicionConcreto().registrarMedicion());
         socio.registrarMedicion(new AdapterMedicionConcreto().registrarMedicion());
 
-        //Trofeo a la constancia | hay que cambiar el peso
+        //Trofeo a la constancia
         TrofeoObservador trofeoObservador2 = new Constancia(socio,socio.getObjetivo().getRutina());
         socio.getObjetivo().getRutina().agregarObservador(trofeoObservador2);
         socio.getObjetivo().getRutina().chequearRutinaCumplida();
 
-        //Trofeo de la dedicacion
+        //Trofeo de la dedicacion | hay que cambiar el peso
         TrofeoObservador trofeoObservador3 = new Dedicacion(socio.getObjetivo());
         socio.getObjetivo().agregarObservador(trofeoObservador3);
         socio.getObjetivo().chequearObjCumplido();
 
         socio.verTrofeos();
-
     }
 }

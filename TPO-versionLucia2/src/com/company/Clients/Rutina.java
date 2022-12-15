@@ -38,21 +38,20 @@ public class Rutina {
 
 
     public void chequearRutinaCumplida() {
-        int contador=0;
         for (Entrenamiento e : entrenamientos) {
             if (!e.entrenamientoCumplido()) {
+                setCumplida(false);
                 break;
             } else {
-                contador++;
-            }
-            if(contador == 5){
                 setCumplida(true);
-                for(TrofeoObservador tr : observadors) {
-                    tr.chequearPremio();
-                }
             }
-
         }
+        if(isCumplida()){
+            for(TrofeoObservador tr : observadors) {
+                tr.chequearPremio();
+            }
+        }
+
     }
 
 

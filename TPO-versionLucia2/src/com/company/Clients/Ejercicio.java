@@ -22,6 +22,9 @@ public class Ejercicio {
     public static final String ANSI_RESET = "\u001B[0m";
 
 
+    public Ejercicio(){
+    }
+
     public Ejercicio(String nombre, ExigenciaMuscular exigenciaMuscular, int nivelAerobico , GrupoMuscular grupo) {
         this.series = random.nextInt(4 - 2 + 1) + 2;
         this.reps =  random.nextInt(15 - 5 + 1) + 5;
@@ -32,15 +35,18 @@ public class Ejercicio {
         this.nombre = nombre;
     }
 
-    public Ejercicio() {
-
-    }
-
     public void mostrarCadaEjercicio() {
         System.out.println(getNombre() + " | " + ANSI_RED +"Sets: " +  getSeries() + ANSI_RESET + " | " +ANSI_RED +"Reps: " + getReps() +ANSI_RESET +" | " +ANSI_RED +"Load: " + getPesoAsignado() + "Kg"+ ANSI_RESET);
 
     }
 
+    public ExigenciaMuscular getExigenciaMuscular() {
+        return exigenciaMuscular;
+    }
+
+    public void setExigenciaMuscular(ExigenciaMuscular exigenciaMuscular) {
+        this.exigenciaMuscular = exigenciaMuscular;
+    }
 
     public int getSeries() {
         return series;

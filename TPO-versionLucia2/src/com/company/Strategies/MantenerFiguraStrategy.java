@@ -6,8 +6,8 @@ import com.company.Clients.Socio;
 public class MantenerFiguraStrategy implements IObjetivoStrategy{
 
     private String nombreObjetivo;
-    private int valorConfigurable = 3;
-
+    private Double valorConfigurable = 3.0;
+    private Double pesoDelCominenzoDeRutina = 60.0;
 
     private int nivelAerobico = 3;
     private ExigenciaMuscular exigenciaMuscular = ExigenciaMuscular.MEDIA;
@@ -22,8 +22,8 @@ public class MantenerFiguraStrategy implements IObjetivoStrategy{
     }
 
     @Override
-    public boolean objCumplido(Socio socio) {
-        if(socio.getPesoActual() < (socio.getPesoActual() + valorConfigurable) && socio.getPesoActual() > (socio.getPesoActual() + valorConfigurable)) {
+    public boolean objCumplido(Socio socio) {  //47 50 53
+        if(socio.getPesoActual() > (pesoDelCominenzoDeRutina - valorConfigurable) && socio.getPesoActual() < (pesoDelCominenzoDeRutina + valorConfigurable)) {
             System.out.println("El objetivo de mantener la figura fue cumplido");
             return true;
         }

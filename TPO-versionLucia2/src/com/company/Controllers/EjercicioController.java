@@ -1,6 +1,8 @@
 package com.company.Controllers;
 
 import com.company.Clients.Ejercicio;
+import com.company.Clients.GrupoMuscular;
+import com.company.Strategies.ExigenciaMuscular;
 
 public class EjercicioController {
 
@@ -11,6 +13,6 @@ public class EjercicioController {
     }
 
     public Ejercicio agregarEjercicio(Ejercicio ejercicio) {
-        return new Ejercicio();
+        return new Ejercicio("nombre", ExigenciaMuscular.ALTA,3, GrupoMuscular.PECHO);
     }
 }

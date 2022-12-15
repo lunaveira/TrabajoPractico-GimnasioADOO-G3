@@ -10,7 +10,6 @@ public class TonificarStrategy implements IObjetivoStrategy{
     private int grasaIdeal = 30;
     private int masaIdeal = 70;
 
-
     private int nivelAerobico = 2;
     private ExigenciaMuscular exigenciaMuscular = ExigenciaMuscular.BAJA;
 
@@ -24,7 +23,7 @@ public class TonificarStrategy implements IObjetivoStrategy{
     }
 
     @Override
-    public boolean objCumplido(Socio socio) {
+    public boolean objCumplido(Socio socio) { //
         if (socio.getGrasaActual() <= grasaIdeal && socio.getMasaActual() >= masaIdeal) {
             System.out.println("El objetivo de tonificar fue cumplido");
             return true;
