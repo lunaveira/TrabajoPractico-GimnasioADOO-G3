@@ -16,10 +16,7 @@ import java.util.ArrayList;
 
 public class Main {
 
-    //una estrategia cree una rutina
-    //que se refuerce dicha rutina
-    //que los observers funcionen
-    //  -
+
 
     public static void Rutina(Socio socio, boolean reforzar){
         System.out.println("-----------------RUTINA------------------");
@@ -42,7 +39,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Socio socio = new Socio(TipoEstrategia.BAJAR, "Lucia", "Naveira", 20, TipoSexo.FEMENINO, 51.0,20.1, 72.4);
+        Socio socio = new Socio(TipoEstrategia.MANTENER, "Lucia", "Naveira", 20, TipoSexo.FEMENINO, 51.0,20.1, 72.4);
 
         System.out.println("-----------SOCIO------------");
 

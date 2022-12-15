@@ -4,7 +4,7 @@ import com.company.Strategies.ExigenciaMuscular;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.random.*;
+//import java.util.random.*;
 
 public class Ejercicio {
 
